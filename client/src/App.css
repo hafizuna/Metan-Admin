@@ -1,0 +1,239 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #9e9ea4;
+    font-family: 'Monstserrat', sans-serif
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas: 
+        'sidebar header header header'
+        'sidebar main main main';
+    height: 100vh;
+}
+
+.icon {
+    vertical-align: middle;
+    line-height: 1px;
+    font-size: 20px;
+  }
+  .icon_header {
+    vertical-align: middle;
+    line-height: 1px;
+    font-size: 26px;
+  }
+  .icon,
+  .icon_header {
+    margin-right: 5px;
+  }
+  
+  .close_icon {
+    color: red;
+    margin-left: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+
+
+/* Header */
+
+.header {
+    grid-area: header;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;
+    box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+}
+ 
+ .menu-icon{
+    display: none;
+}
+  .header-right {
+    cursor: pointer;
+}
+
+  /* Sidebar  */
+#sidebar {
+    grid-area: sidebar;
+    height: 100%;
+    background-color: #3C5B6F;
+    overflow-y: auto;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+  }
+  
+  .sidebar-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px 0px 30px;
+    margin-bottom: 30px;
+  }
+  
+  .sidebar-title > span {
+    display: none;
+  }
+  
+  .sidebar-brand {
+    margin-top: 35px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+  
+  .sidebar-list {
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .sidebar-list-item {
+    padding: 20px 20px 20px 20px;
+    font-size: 18px;
+  }
+  
+  .sidebar-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+  }
+  
+  .sidebar-list-item > a {
+    text-decoration: none;
+    color: #9e9ea4;
+  }
+  
+  .sidebar-responsive {
+    display: inline !important;
+    position: absolute;
+    z-index: 12 !important;
+  }
+  
+  /* End Sidebar  */
+  
+/* Main  */
+.main-container {
+    grid-area: main;
+    overflow-y: auto;
+    padding: 20px 20px;
+    color: black;
+  }
+  
+  .main-title {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .main-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 15px 0;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 8px 15px;
+    border-radius: 5px;
+  }
+  
+  .card:first-child {
+    background-color: #A87676;
+  }
+  
+  .card:nth-child(2) {
+    background-color: #CA8787;
+  }
+  
+  .card:nth-child(3) {
+    background-color: #E1ACAC;
+  }
+  
+  .card:nth-child(4) {
+    background-color: #FFD0D0;
+  }
+
+  .card-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card-inner > .card_icon {
+    font-size: 25px;
+  }
+  
+  .request-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .request-table th,
+  .request-table td {
+    padding: 17px;
+    text-align: left;
+  }
+
+  .request-table .action{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .request-table .action div{
+    margin-right: 17px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .request-table td button {
+    border: none;
+    padding: 6px 12px;
+    margin-bottom: 2px;
+    margin-right: 4px;
+    border-radius: 19px;
+    cursor: pointer;
+    background-color: #75A47F;
+  }
+  
+  .request-table tbody tr:nth-child(even) {
+    background-color: #A87676;
+    border-radius: 25px;
+  }
+  
+  /* End Main  */
+
+  /* Medium <= 992px */
+
+@media screen and (max-width: 992px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.2fr 3fr;
+      grid-template-areas:
+        "header"
+        "main";
+    }
+  
+    #sidebar {
+      display: none;
+    }
+
+    .main-cards{
+        display: none;
+    }
+  
+    .menu-icon {
+      display: inline;
+    }
+  
+    .sidebar-title > span {
+      display: inline;
+    }
+  }
